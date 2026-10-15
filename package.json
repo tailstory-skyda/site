@@ -1,0 +1,29 @@
+{
+  "name": "skyda-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8788 --local-upstream localhost:8788",
+    "deploy": "wrangler deploy",
+    "build": "esbuild client/app.ts --bundle --format=esm --minify --target=es2022 --outfile=public/app.js",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p client",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "hono": "^4.13.13",
+    "jose": "^6.2.12"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.4.2",
+    "@cloudflare/workers-types": "^5.20261015.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.151.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261012.1": true,
+    "sharp@0.35.5": true
+  }
+}

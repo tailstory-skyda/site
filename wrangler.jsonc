@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skyda-site",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "routes": [{ "pattern": "skyda.dev", "custom_domain": true }],
+  "workers_dev": false,
+  "observability": { "enabled": true },
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "public" },
+  "vars": { "ID_URL": "https://id.skyda.dev" }
+}
